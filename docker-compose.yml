@@ -1,0 +1,13 @@
+services:
+  jitter:
+    image: ghcr.io/ignatella/cs2-jitter:latest
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    volumes:
+      - jitter-data:/data
+    environment:
+      JITTER_POPS: "waw,fra,vie"
+
+volumes:
+  jitter-data:

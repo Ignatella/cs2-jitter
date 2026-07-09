@@ -1,0 +1,6 @@
+/jitter
+*.db
+*.db-wal
+*.db-shm
+
+.idea

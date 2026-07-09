@@ -1,0 +1,66 @@
+:root {
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --baseline: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --series-rtt: #2a78d6;    /* categorical slot 1 (blue) */
+  --series-jitter: #1baf7a; /* categorical slot 2 (aqua) */
+  --envelope: #898781;      /* p99: statistical envelope wears muted ink */
+  --loss: #d03b3b;          /* status: critical */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --series-rtt: #3987e5;
+    --series-jitter: #199e70;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+header { display: flex; align-items: baseline; gap: 24px; padding: 16px 24px; flex-wrap: wrap; }
+h1 { font-size: 18px; margin: 0; }
+#ranges { display: flex; flex-wrap: wrap; gap: 4px; }
+#ranges button {
+  background: none; border: 1px solid var(--border); color: var(--ink-2);
+  padding: 4px 10px; border-radius: 6px; cursor: pointer;
+  font: inherit; font-size: 13px;
+}
+#ranges button.active { color: var(--ink); border-color: var(--series-rtt); }
+main { padding: 0 24px 24px; max-width: 1100px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px; margin-bottom: 16px; position: relative;
+}
+.card h2 { font-size: 14px; margin: 0 0 4px; font-weight: 600; }
+.card h3 { font-size: 12px; color: var(--muted); margin: 10px 0 2px; font-weight: 500; }
+.card h3 .hint { font-weight: 400; }
+.card h3 .fault {
+  display: inline-block; width: 10px; height: 10px; vertical-align: middle;
+  border-radius: 2px; background: color-mix(in srgb, var(--loss) 22%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--loss) 45%, transparent);
+}
+.card .stats { color: var(--ink-2); font-size: 12px; margin-bottom: 4px; }
+.card .stats b { color: var(--ink); font-weight: 600; }
+.card .stats b.err { color: var(--loss); }
+.chart { width: 100%; }
+.empty { color: var(--muted); }
+
+/* uPlot chrome integration */
+.u-legend { font: 12px/1.7 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink-2); }
+.u-legend th { font-weight: 400; }
+.u-legend .u-value { font-variant-numeric: tabular-nums; color: var(--ink); }
+.u-select { background: rgba(128, 128, 128, 0.15); }

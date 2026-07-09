@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jitter</title>
+<link rel="stylesheet" href="vendor/uPlot.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>jitter — Valve relay latency</h1>
+  <nav id="ranges" aria-label="Time range">
+    <button data-m="1">1m</button>
+    <button data-m="3">3m</button>
+    <button data-m="5">5m</button>
+    <button data-m="10">10m</button>
+    <button data-m="30">30m</button>
+    <button data-m="60">1h</button>
+    <button data-m="180">3h</button>
+    <button data-m="1440" class="active">24h</button>
+    <button data-m="10080">7d</button>
+    <button data-m="43200">30d</button>
+  </nav>
+</header>
+<main id="charts"><p class="empty">Loading…</p></main>
+<script src="vendor/uPlot.iife.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

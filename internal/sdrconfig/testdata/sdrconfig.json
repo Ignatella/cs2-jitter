@@ -1,0 +1,22 @@
+{
+  "revision": 249,
+  "pops": {
+    "waw": {
+      "desc": "Warsaw",
+      "relays": [
+        {"ipv4": "192.0.2.10", "port_range": [27015, 27200]},
+        {"ipv4": "192.0.2.11", "port_range": [27015, 27200]},
+        {"ipv4": "192.0.2.12", "port_range": [27015, 27200]}
+      ]
+    },
+    "fra": {
+      "desc": "Frankfurt",
+      "relays": [
+        {"ipv4": "198.51.100.20", "port_range": [27015, 27200]}
+      ]
+    },
+    "ordc": {
+      "desc": "Chicago control plane, no relays"
+    }
+  }
+}
