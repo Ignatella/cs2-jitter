@@ -35,7 +35,7 @@ kept in the URL hash (e.g. `#3m`) so it survives reload and is shareable.
 ## Run (Docker, recommended)
 
 ```bash
-docker compose up -d --build
+docker compose up -d
 # dashboard at http://<host>:8080
 ```
 
