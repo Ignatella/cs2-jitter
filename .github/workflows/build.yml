@@ -21,7 +21,9 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  # Must be lowercase for GHCR; hardcoded because github.repository is
+  # mixed-case (Ignatella/cs2-jitter) and is used raw in `outputs`/imagetools.
+  IMAGE_NAME: ignatella/cs2-jitter
 
 jobs:
   # Build each arch on its own native runner (no QEMU) and push by digest.

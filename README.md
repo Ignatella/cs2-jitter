@@ -32,15 +32,20 @@ The range buttons span `1m … 30d`. Ranges of 10 minutes or less show the raw
 while playing); longer ranges show per-minute aggregates. The selected range is
 kept in the URL hash (e.g. `#3m`) so it survives reload and is shareable.
 
-## Run (Docker, recommended)
+## Run (Docker)
+
+Compose (pulls the prebuilt image from GHCR):
 
 ```bash
 docker compose up -d
 # dashboard at http://<host>:8080
 ```
 
-The compose file sets `net.ipv4.ping_group_range` so unprivileged ICMP works.
-Alternative: `cap_add: [NET_RAW]` plus `JITTER_ICMP_PRIVILEGED: "true"`.
+Or without compose, one line:
+
+```bash
+docker run -d --name jitter -p 8080:8080 -v jitter-data:/data ghcr.io/ignatella/cs2-jitter:latest
+```
 
 ## Run (bare)
 
