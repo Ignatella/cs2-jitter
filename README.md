@@ -25,6 +25,20 @@ ICMP is used because the game's own SDR UDP ping format is not public; the
 relays are the same machines on the same path. Add `-extra-targets` (your
 router, 1.1.1.1) to tell "Valve path" problems apart from "my link" problems.
 
+## Examples
+
+A 24-hour history with jitter spikes and rising instability — **not a playable
+connection** (the kind of pattern this tool exists to catch):
+
+![24-hour history of a jittery, not-playable connection](docs/screenshots/example-24h-not-playable.png)
+
+Live 1-minute views of steady, low-jitter links that **play fine** (sub-1 ms
+jitter, no loss):
+
+![live 1-minute view of a playable connection](docs/screenshots/example-live-playable-1.png)
+
+![live 1-minute view of a playable low-latency connection](docs/screenshots/example-live-playable-2.png)
+
 ## Dashboard
 
 The range buttons span `1m … 30d`. Ranges of 10 minutes or less show the raw
