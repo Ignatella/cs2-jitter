@@ -7,6 +7,12 @@ Continuously measures RTT, jitter, and packet loss from your network to the
 Valve SDR relays that carry CS2 matchmaking traffic — so you can see *when*
 your connection degrades and whether it's one Valve path or your whole link.
 
+**Why jitter?** For smooth play, jitter (variation in latency) usually matters
+more than raw ping. CS2's servers and client-side interpolation / lag
+compensation absorb a *stable* latency, but they can't hide latency that keeps
+changing — that's what surfaces as stutter, rubber-banding, and inconsistent
+hit registration. A steady 60 ms plays better than an erratic 20 ms.
+
 ## How it measures
 
 CS2 traffic enters Valve's network at an SDR relay POP (Warsaw, Frankfurt,
@@ -32,12 +38,10 @@ connection** (the kind of pattern this tool exists to catch):
 
 ![24-hour history of a jittery, not-playable connection](docs/screenshots/example-24h-not-playable.png)
 
-Live 1-minute views of steady, low-jitter links that **play fine** (sub-1 ms
+A live 1-minute view of steady, low-jitter links that **play fine** (sub-1 ms
 jitter, no loss):
 
 ![live 1-minute view of a playable connection](docs/screenshots/example-live-playable-1.png)
-
-![live 1-minute view of a playable low-latency connection](docs/screenshots/example-live-playable-2.png)
 
 ## Dashboard
 
